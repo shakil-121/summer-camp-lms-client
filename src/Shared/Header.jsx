@@ -43,7 +43,14 @@ const Header = () => {
             </li>
             <li>
               <Link className="text-sm font-bold">Instructor</Link>
-            </li>
+            </li> 
+            {
+              user?<>
+              <li>
+              <Link to="/dashboard" className="text-sm font-bold">Dashboard</Link>
+            </li> 
+              </>:<></>
+            }
           </ul>
         </div>
         <Link to="/"><img className="h-16" src={logo} alt="" /></Link>
@@ -59,6 +66,13 @@ const Header = () => {
           <li>
             <Link className="text-sm font-bold">Instructor</Link>
           </li>
+          {
+              user?<>
+              <li>
+              <Link to="/dashboard" className="text-sm font-bold">Dashboard</Link>
+            </li> 
+              </>:<></>
+            }
         </ul>
       </div>
       <div className="navbar-end">

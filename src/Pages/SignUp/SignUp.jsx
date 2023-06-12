@@ -19,7 +19,7 @@ const SignUp = () => {
     watch,
     formState: { errors },
   } = useForm();
-  const {registration}=useContext(AuthContext)
+  const {registration,googleLogin}=useContext(AuthContext)
 
 
   const onSubmit = data =>{
@@ -28,7 +28,21 @@ const SignUp = () => {
     registration(data.email,data.password)
     .then(result=>{
       const loggedUser=result.user; 
-      toast("SignUp Successfully ") 
+      const saveUser = { name: data.name, email: data.email }
+      console.log(saveUser);
+                        fetch('http://localhost:5000/users', {
+                            method: 'POST',
+                            headers: {
+                                'content-type': 'application/json'
+                            },
+                            body: JSON.stringify(saveUser)
+                        })
+                            .then(res => res.json())
+                            .then(data => {
+                                if (data.insertedId) {
+                                    toast("SignUp Successfully ") 
+                                }
+                            })
       updatePofiledata(loggedUser,data.name,data.image)
     })
     .catch(error=>{
@@ -45,13 +59,18 @@ const updatePofiledata=(user,name,photo)=>{
    
    }
     )
-    .then(result=>console.log(result))
+    .then(()=>{
+
+
+    })
     .catch(error=>console.log(error))
 }
-
+const handlegooglelogin=()=>{
+  googleLogin()
+}
   return (
     <div>
-      <div className="hero w-full min-h-screen rounded-lg bg-base-200">
+      <div className="hero w-full min-h-screen rounded-lg mt-24 bg-base-200">
         <div className="hero-content w-4/6 flex-col py-4  lg:flex-row">
           <div className="text-center md:w-1/2 lg:text-left">
             <Lottie animationData={loginAnimation} loop={true} />
@@ -123,7 +142,7 @@ const updatePofiledata=(user,name,photo)=>{
               <p className="text-center">Or Sign-up with</p>
               <div className="flex text-center gap-8 py-4 justify-center">
                 <Link>
-                  <FaGithub className="h-6 w-6"></FaGithub>
+                  <FaGoogle onClick={handlegooglelogin} className="h-6 w-6"></FaGoogle>
                 </Link>
                 {/* <Link onClick={handleSigninGithub}><FaGithub  className="h-6 w-6"></FaGithub></Link>  */}
               </div>

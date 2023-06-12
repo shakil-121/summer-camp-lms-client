@@ -19,7 +19,7 @@ const HoroSection = () => {
   };
 
   return (
-    <div>
+    <div className="mt-14">
       <Swiper
         spaceBetween={30}
         centeredSlides={true}

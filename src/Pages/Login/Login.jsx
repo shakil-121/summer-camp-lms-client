@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Lottie from "lottie-react";
-import { FaGoogle, FaGithub } from "react-icons/fa";
+import { FaGoogle } from "react-icons/fa";
 import loginAnimation from "../../assets/login.json";
 import logo from "../../assets/logo2.png"
 import { AuthContext } from '../../AuthProvider/AuthProvider';
@@ -11,7 +11,7 @@ import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Login = () => { 
   const [error,setError]=useState('')
-const {login}=useContext(AuthContext)
+const {login,googleLogin}=useContext(AuthContext)
 
     const handleLogin=(event)=>{
       event.preventDefault(); 
@@ -34,12 +34,12 @@ const {login}=useContext(AuthContext)
 
     } 
 
-    const handelResetPassword=()=>{
-
+    const handlegooglelogin=()=>{
+      googleLogin()
     }
     return (
         <div>
-        <div className="hero w-full min-h-screen rounded-lg bg-base-200">
+        <div className="hero w-full mt-24 min-h-screen rounded-lg bg-base-200">
         <div className="hero-content w-4/6 flex-col py-4  lg:flex-row">
           <div className="text-center md:w-1/2 lg:text-left">
             <Lottie animationData={loginAnimation} loop={true} />
@@ -74,9 +74,9 @@ const {login}=useContext(AuthContext)
                   placeholder="password"
                   className="input input-bordered"
                 />
-                <label className="label">
+                {/* <label className="label">
                   <Link onClick={handelResetPassword}><p className="text-blue-600"> Forgot password?</p></Link>
-                </label>
+                </label> */}
               </div>
               <div className="form-control mt-6">
                 <button className="btn bg-[#050931] border-none text-white hover:text-black">Login</button>
@@ -84,9 +84,8 @@ const {login}=useContext(AuthContext)
               <p className="text-center text-red-600">{error}</p>
               <p className="text-center">Or Sign-in with</p>
               <div className="flex text-center gap-8 py-4 justify-center">
-                  <Link><FaGithub  className="h-6 w-6"></FaGithub></Link> 
+                  <Link><FaGoogle onClick={handlegooglelogin}  className="h-6 w-6"></FaGoogle></Link> 
                   {/* <Link onClick={handleSigninGithub}><FaGithub  className="h-6 w-6"></FaGithub></Link>  */}
-                
               </div>
             </form>
               <p className="text-center pb-6">Are you New?<Link className="text-blue-600 ps-2" to='/signup'>Registration</Link></p>
