@@ -11,9 +11,6 @@ useEffect(()=>{
     .then(data=>setCourses(data))
 },[])
 
-
-
-// console.log(courses);
     return (
        <div className='my-4' >
         <div className='mt-10'>
