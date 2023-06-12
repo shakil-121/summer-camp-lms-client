@@ -1,0 +1,62 @@
+[
+    {
+      "_id": "1",
+      "InstructorPhoto": "https://i.ibb.co/jHpWRV0/in2.jpg",
+      "name": "John Doe",
+      "email": "johndoe@example.com",
+      "totalClasses": 10,
+      "about": "John Doe is an experienced instructor with a passion for teaching mathematics and physics. He believes in making complex concepts easy to understand through practical examples and real-world applications.",
+      "designation": "Senior Lecturer",
+      "languages": ["English", "Arabic"]
+    },
+    {
+      "_id": "2",
+      "InstructorPhoto": "https://i.ibb.co/3yTQ1bD/in1.jpg",
+      "name": "Jane Smith",
+      "email": "janesmith@example.com",
+      "totalClasses": 15,
+      "about": "Jane Smith is a dedicated instructor specializing in literature and creative writing. Her classes encourage students to explore their imagination and develop their storytelling skills.",
+      "designation": "Associate Professor",
+      "languages": ["English", "French"]
+    },
+    {
+      "_id": "3",
+      "InstructorPhoto": "https://i.ibb.co/s6LMdSB/in3.jpg",
+      "name": "Michael Johnson",
+      "email": "michaeljohnson@example.com",
+      "totalClasses": 20,
+      "about": "Michael Johnson is a highly qualified instructor in computer science. He has expertise in programming languages and enjoys helping students develop problem-solving skills in the field of technology.",
+      "designation": "Assistant Professor",
+      "languages": ["English"]
+    },
+    {
+      "_id": "4",
+      "InstructorPhoto": "https://i.ibb.co/m4z4tqz/in4.jpg",
+      "name": "Sarah Williams",
+      "email": "sarahwilliams@example.com",
+      "totalClasses": 12,
+      "about": "Sarah Williams is a passionate instructor of biology and environmental sciences. She believes in fostering a deep appreciation for nature and the interconnectedness of all living organisms.",
+      "designation": "Lecturer",
+      "languages": ["English", "Arabic"]
+    },
+    {
+      "_id": "5",
+      "InstructorPhoto": "https://i.ibb.co/Mks9z3G/in6.jpg",
+      "name": "David Lee",
+      "email": "davidlee@example.com",
+      "totalClasses": 18,
+      "about": "David Lee is an enthusiastic instructor of physical education and sports. He emphasizes the importance of maintaining a healthy lifestyle through regular exercise and teamwork.",
+      "designation": "Physical Education Instructor",
+      "languages": ["English"]
+    },
+    {
+      "_id": "6",
+      "InstructorPhoto": "https://i.ibb.co/k8j7nkn/in5.jpg",
+      "name": "Emily Brown",
+      "email": "emilybrown@example.com",
+      "totalClasses": 9,
+      "about": "Emily Brown is a skilled instructor in music theory and piano. Her classes focus on developing a strong foundation in music fundamentals and nurturing students' creativity and musicality.",
+      "designation": "Music Instructor",
+      "languages": ["English"]
+    }
+]

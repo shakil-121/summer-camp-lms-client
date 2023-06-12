@@ -1,4 +1,4 @@
-import React from 'react'; 
+import React, { useContext, useState } from 'react'; 
 import { Link, useLocation, useNavigate } from "react-router-dom"; 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -7,11 +7,31 @@ import { FaGoogle, FaGithub } from "react-icons/fa";
 import loginAnimation from "../../assets/login.json";
 import { BiError } from "react-icons/bi";
 import logo from "../../assets/logo2.png"
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 
-const Login = () => {
+const Login = () => { 
+  const [error,setError]=useState('')
+const {login}=useContext(AuthContext)
 
-    const handleLogin=()=>{
+    const handleLogin=(event)=>{
+      event.preventDefault(); 
+      const form=event.target; 
+      const email=form.email.value; 
+      const password=form.password.value;
+
+      login(email,password)
+      .then(result=>{
+        const loggedUser=result.user; 
+        console.log(loggedUser); 
+        toast('Login Successfully')
+        setError('')
+      })
+      .catch(error=>{
+        console.log(error);
+        setError(error.message)
+
+      })
 
     } 
 
@@ -62,7 +82,7 @@ const Login = () => {
               <div className="form-control mt-6">
                 <button className="btn bg-[#050931] border-none text-white hover:text-black">Login</button>
               </div>  
-              <p className="text-center text-red-600">error</p>
+              <p className="text-center text-red-600">{error}</p>
               <p className="text-center">Or Sign-in with</p>
               <div className="flex text-center gap-8 py-4 justify-center">
                   <Link><FaGithub  className="h-6 w-6"></FaGithub></Link> 

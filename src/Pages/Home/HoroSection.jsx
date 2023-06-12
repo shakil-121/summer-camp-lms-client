@@ -8,6 +8,7 @@ import banner1 from "../../assets/banner/banner.png"
 import banner2 from "../../assets/banner/banner2.png"
 import banner3 from "../../assets/banner/banner3.png" 
 import { FaChevronCircleRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const HoroSection = () => {
   const progressCircle = useRef(null);
@@ -36,15 +37,13 @@ const HoroSection = () => {
       >
         <SwiperSlide>
             <img className="w-full" src={banner1} alt="" /> 
-            <button className="hidden lg:flex btn btn-outline btn-primary absolute -mt-64 ms-32 px-4">All Classes <FaChevronCircleRight></FaChevronCircleRight></button>
-        </SwiperSlide>
+            <Link to="/allcourses"><button className="hidden lg:flex btn btn-outline btn-primary absolute -mt-64 ms-32 px-4">All Classes <FaChevronCircleRight></FaChevronCircleRight></button></Link>        </SwiperSlide>
         <SwiperSlide>
             <img className="w-full" src={banner2} alt="" />
-            <button className="hidden lg:flex btn btn-outline btn-primary absolute -mt-64 ms-32 px-4">All Classes <FaChevronCircleRight></FaChevronCircleRight></button>
-        </SwiperSlide>
+            <Link to="/allcourses"><button className="hidden lg:flex btn btn-outline btn-primary absolute -mt-64 ms-32 px-4">All Classes <FaChevronCircleRight></FaChevronCircleRight></button></Link>        </SwiperSlide>
         <SwiperSlide>
             <img className="w-full" src={banner3} alt="" />
-            <button className="hidden lg:flex btn btn-outline btn-primary absolute -mt-64 ms-32 px-4">All Classes <FaChevronCircleRight></FaChevronCircleRight></button>
+            <Link to="/allcourses"><button className="hidden lg:flex btn btn-outline btn-primary absolute -mt-64 ms-32 px-4">All Classes <FaChevronCircleRight></FaChevronCircleRight></button></Link>
         </SwiperSlide>
       </Swiper>
     </div>
