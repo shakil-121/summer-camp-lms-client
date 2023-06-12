@@ -8,7 +8,7 @@ const axiosSecure = axios.create({
 });
 
 const useAxiosSecure = () => {
-  const { logout } =useContext(AuthContext)
+  const { logout } =useContext(AuthContext);
   const navigate = useNavigate(); 
 
   useEffect(() => {
