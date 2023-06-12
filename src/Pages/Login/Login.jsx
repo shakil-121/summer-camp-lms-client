@@ -5,7 +5,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import Lottie from "lottie-react";
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import loginAnimation from "../../assets/login.json";
-import { BiError } from "react-icons/bi";
 import logo from "../../assets/logo2.png"
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 
