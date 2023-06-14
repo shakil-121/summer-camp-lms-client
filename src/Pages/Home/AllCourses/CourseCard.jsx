@@ -1,9 +1,41 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FaUserFriends,FaRegBookmark, FaShareAlt,FaRegStar,FaStar,FaEye } from "react-icons/fa";
 import Rating from "react-rating";
+import { AuthContext } from "../../../AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 const CourseCard = ({course}) => {
-    // console.log(course);
+    console.log(course);
+    const {user}=useContext(AuthContext)
+
+    const handlecart=(course)=>{
+             if (user && user.email) {
+            const enrolledCourse = { courseID:course._id, courseName:course.courseName, price: course.price, instructor_name: course.instructor, image: course.coverPhoto, user_email: user.email };
+            console.log(enrolledCourse);
+            fetch('http://localhost:5000/cart', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(enrolledCourse)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Successfull',
+                        text: 'Course successfully added.Go to Dashboard',
+                    })
+                    console.log(data);
+                })
+        }
+
+    }
+
+
+
+
+
   return (
     <div className="card card-compact w-90% bg-base-100 mb-6 shadow-xl">
       <figure>
@@ -37,7 +69,7 @@ const CourseCard = ({course}) => {
         </div>
         </div>
         <div className="card-actions justify-end">
-          <button className="btn btn-primary">Enroll Now</button>
+          <button onClick={()=>handlecart(course)} className="btn btn-primary">Add to Enroll</button>
         </div>
       </div>
     </div>

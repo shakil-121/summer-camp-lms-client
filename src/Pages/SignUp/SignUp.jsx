@@ -28,7 +28,7 @@ const SignUp = () => {
     registration(data.email,data.password)
     .then(result=>{
       const loggedUser=result.user; 
-      const saveUser = { name: data.name, email: data.email }
+      const saveUser = { name: data.name, email: data.email,image:data.image}
       console.log(saveUser);
                         fetch('http://localhost:5000/users', {
                             method: 'POST',

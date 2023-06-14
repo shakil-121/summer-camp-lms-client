@@ -4,6 +4,7 @@ import ServicesInfo from '../ServicesInfo';
 import TrastedBy from '../TrastedBy';
 import InstractorSection from '../InstractorSection';
 import PopulerCourse from '../PopulerCourse';
+import FAQ from '../FAQ';
 
 
 const Home = () => {
@@ -12,7 +13,8 @@ const Home = () => {
             <HoroSection></HoroSection>
             <ServicesInfo></ServicesInfo>
             <InstractorSection></InstractorSection> 
-            <PopulerCourse></PopulerCourse>
+            <PopulerCourse></PopulerCourse> 
+            <FAQ></FAQ>
             <TrastedBy></TrastedBy>
         </div>
     );

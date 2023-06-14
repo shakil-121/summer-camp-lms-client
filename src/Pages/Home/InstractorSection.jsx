@@ -10,7 +10,7 @@ const InstractorSection = () => {
   const [instractor, setainstractor] = useState([]);
 
   useEffect(() => {
-    fetch("../../../public/Instractor.json")
+    fetch("http://localhost:5000/user/instructor")
       .then((res) => res.json())
       .then((data) => setainstractor(data));
   }, []);
@@ -27,6 +27,17 @@ const InstractorSection = () => {
         pagination={{
           clickable: true,
         }}
+        breakpoints={{
+          360: {
+            slidesPerView: 1,
+          },
+          768: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
+        }}
         modules={[FreeMode, Pagination]}
         className="mySwiper"
       >
@@ -35,7 +46,7 @@ const InstractorSection = () => {
 
             <div className="card w-62 bg-base-100 shadow-xl">
                 <img
-                  src={ins?.InstructorPhoto}
+                  src={ins?.image}
                   alt="Shoes"
                   className="rounded-xl"
                 />

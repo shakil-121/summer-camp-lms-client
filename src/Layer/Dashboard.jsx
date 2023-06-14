@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { NavLink, Outlet } from "react-router-dom"; 
-import { FaShoppingCart, FaWallet, FaCalendarAlt, FaHome, FaUtensils, FaBook, FaUsers } from 'react-icons/fa';
+import { FaAlignJustify,FaShoppingCart, FaWallet, FaCalendarAlt, FaHome, FaUtensils, FaBook, FaUsers } from 'react-icons/fa';
 import useAdmin from "../Hooks/useAdmin";
 import useInstructor from "../Hooks/useInstractor";
 import { AuthContext } from "../AuthProvider/AuthProvider";
@@ -18,9 +18,9 @@ const Dashboard = () => {
         <Outlet></Outlet>
         <label
           htmlFor="my-drawer-2"
-          className="btn btn-primary drawer-button lg:hidden"
+          className="btn btn-primary  drawer-button lg:hidden"
         >
-          Open drawer
+          <FaAlignJustify></FaAlignJustify>
         </label>
       </div>
       <div className="drawer-side border-r-8 border-amber-500 bg-indigo-800 text-white">

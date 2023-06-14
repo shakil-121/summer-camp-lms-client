@@ -42,7 +42,7 @@ const Header = () => {
               <Link className="text-sm font-bold" to="/allcourses">Classes</Link>
             </li>
             <li>
-              <Link className="text-sm font-bold">Instructor</Link>
+              <Link to="/instructor" className="text-sm font-bold">Instructor</Link>
             </li> 
             {
               user?<>
@@ -64,7 +64,7 @@ const Header = () => {
              <Link className="text-sm font-bold" to="/allcourses">Classes</Link>
           </li>
           <li>
-            <Link className="text-sm font-bold">Instructor</Link>
+            <Link to="/instructor" className="text-sm font-bold">Instructor</Link>
           </li>
           {
               user?<>

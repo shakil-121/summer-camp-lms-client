@@ -15,6 +15,7 @@ import MyClass from "../Pages/Dashboard/MyClass";
 import ManageClass from "../Pages/Dashboard/ManageClass";
 import ManageUser from "../Pages/Dashboard/ManageUser";
 import MySelectedClasses from "../Pages/Dashboard/MySelectedClasses";
+import InstructorPage from "../Pages/InstructorPage/InstructorPage";
 
 const router = createBrowserRouter([
     {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
         {
           path:"/allcourses", 
           element:<PrivateRoute><AllCourses></AllCourses></PrivateRoute>
+        },
+        {
+          path:"/instructor", 
+          element:<InstructorPage></InstructorPage>
         }
       ]
     },
